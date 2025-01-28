@@ -27,6 +27,7 @@ async function request() {
 const server = http.createServer((req, res) => {
     request().then(() => {
         res.setHeader('Content-Type', 'application/json');
+        res.setHeader('Access-Control-Allow-Origin', '*');
         res.end(JSON.stringify(currentData));
     });
   });
